@@ -7,6 +7,43 @@
     <title>DROPS and Crops</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/menu.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var showChar = 100;
+            var ellipsestext = "...";
+            var moretext = "less";
+            var lesstext = "more";
+            $('.more').each(function() {
+                var content = $(this).html();
+
+                if(content.length > showChar) {
+
+                    var c = content.substr(0, showChar);
+                    var h = content.substr(showChar-1, content.length - showChar);
+
+                    var html = c + '<span class="moreelipses">'+ellipsestext+'</span>&nbsp;<span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">'+moretext+'</a></span>';
+
+                    $(this).html(html);
+                }
+
+            });
+
+            $(".morelink").click(function(){
+                if($(this).hasClass("less")) {
+                    $(this).removeClass("less");
+                    $(this).html(moretext);
+                } else {
+                    $(this).addClass("less");
+                    $(this).html(lesstext);
+                }
+                $(this).parent().prev().toggle();
+                $(this).prev().toggle();
+                return false;
+            });
+        });
+    </script>
 
 </head>
 <body>
@@ -42,7 +79,7 @@
     <div id="about">
         <img id="img" src="images/about.jpg" alt="img" width="1280">
 
-<h1> ABOUT US</h1>
+        <h1> ABOUT US</h1>
         <p>
             Drops and Crops is a website used to showcase projects that involve partnerships between the water for
             Food Institute and partnering Institutions. The website is managed by the Water for Food Institute. Many
@@ -53,61 +90,192 @@
 
     </div>
 
-<div class="team">
- <h1> MEET THE TEAM</h1>
-    <h2> behind the scenes</h2>
+    <div class="team">
+        <h1> MEET THE TEAM</h1>
+        <h2> behind the scenes</h2>
     </div>
     <div class="clear"></div>
-    <div>
-
-        <img class="img-valign" src="images/paul.jpg" alt="" />
-        <span class="text2"> Paul Noel</span>
-        <img class="img-valign" src="images/Richael.jpg" alt="" />
-        <span class="text2">Richael Young</span>
-        <img class="img-valign" src="images/Becca.jpg" alt="" />
-        <span class="text2">Rebecca Lang</span>
-
-        <img class="img-valign" src="images/Anna.jpg" alt="" />
-        <span class="text2">Anna Wistrom</span>
-        <img class="img-valign" src="images/James.jpg" alt="" />
-        <span class="text2">James Garza</span>
-        <img class="img-valign" src="images/Alex.jpg" alt="" />
-        <span class="text2">Alexander Stejskal</span>
-        <img class="img-valign" src="images/Madison.jpg" alt="" />
-        <span class="text2">Madison Thorn</span>
-        <img class="img-valign" src="images/Richael.jpg" alt="" />
-        <span class="text2">Richael Young</span>
-
+    <div class="port">
+        <div id="containers">
+            <div class="main_port">
+                <div class="port_part_1">
+                    <div class="sub_1">
+                        <div class="sub_img">
+                            <img src="images/paul.jpg"/>
+                        </div>
+                        <div class="sub_text">
+                            <h2>Paul Noel</h2>
+                            <h3>Social Innovation Program Associate</h3>
+                            <p>Paul Noel joined the Water for Food Institute in August 2015 to assist in developing social entrepreneurship programs related to agriculture and water resources. He organizes events and develops multimedia content for the institute, among other duties. He holds a master’s degree in fluid mechanics from the INP-ENSEEIHT, an engineering school in his home country of France, and a master’s degree in civil engineering from the University of Illinois at Urbana-Champaign.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="port_part_2">
+                    <div class="sub_1">
+                        <div class="sub_img">
+                            <img src="images/maiya.jpg"/>
+                        </div>
+                        <div class="sub_text">
+                            <h2>Maiya Shahwan</h2>
+                            <h3>Intern</h3>
+                            <p>Maiya Shahwan is a freshman at the University of Nebraska-Lincoln studying Global Studies with a focus on the Middle East. Being from Los Angeles, California and traveling to the Middle East every year, Maiya is very culturally well-rounded. She is using her knowledge to assist in organizing a conference focusing on the Syrian refugee crisis. Maiya hopes to use this conference as a stepping stone for future action to take in the Middle East. She wants to help the people suffering there in all ways possible, including the food and water aspect of the issue. Maiya is confident that DWFI will assist her with future plans in making a change in the lives of the people in the Middle East.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_port">
+                <div class="port_part_1">
+                    <div class="sub_1">
+                        <div class="sub_img">
+                            <img src="images/Richael.jpg"/>
+                        </div>
+                        <div class="sub_text">
+                            <h2>Richael Young</h2>
+                            <h3>Program Associate</h3>
+                            <p>Richael Young joined the DWFI team in August 2014 to assist in developing stakeholder-inspired programs. Richael is passionate about understanding the challenges that agricultural producers, water resource managers, and other practitioners face in their daily operations and creating tailored solutions to address those needs. She supports the research and education efforts at DWFI.
+                                Richael holds a B.S. in civil and environmental engineering and an M.S. in agricultural and applied economics from the University of Illinois at Urbana-Champaign.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="port_part_2">
+                    <div class="sub_1">
+                        <div class="sub_img">
+                            <img src="images/morgan.jpg"/>
+                        </div>
+                        <div class="sub_text">
+                            <h2>Morgan Spiehs</h2>
+                            <h3>Intern</h3>
+                            <p>Morgan Spiehs is a senior news-editorial and women's and gender studies major from Wood River, Neb. She's interned for the Northeast Nebraska News Company, the Lincoln Journal Star and News 21, a national investigative journalism project. Her work in the United States and abroad has been nationally and internationally recognized. As a Water for Food Institute video intern for spring 2016, she hopes to create visuals that inspire positive change and further the WFI's mission. After graduation, Spiehs hopes to combine what she learns from the WFI and her photo/video skills and continue working for humanitarian and environmental causes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_port">
+                <div class="port_part_1">
+                    <div class="sub_1">
+                        <div class="sub_img">
+                            <img src="images/Becca.jpg"/>
+                        </div>
+                        <div class="sub_text">
+                            <h2>Rebecca Lang</h2>
+                            <h3>Graphic Designer Intern</h3>
+                            <p>Rebecca Lang is an undergraduate student working to achieve her Studio Art major, with an emphasis in Graphic Design, and an Advertising/ Public Relations major. She studied abroad in Italy for a semester, and traveled all around Europe while experiencing all of the different cultures. In her free time, she loves to discover new artwork, drink excessive amounts of coffee, and listen to inspirational podcasts. Becca loves design in a way that she gets to solve a problem conceptually and strategically with visuals. With the guidance of the WFI staff, Becca is responsible for the Brand Identity for Drops and Crops, a project for the WFI, along with creating infographics and visuals for a conference WFI will be holding in April. She is thrilled to be collaborating with other students this semester and hopes to gain great experiences in design along the way. In just a few short months, she will be graduating and hopes to continue growing into the graphic designer she strives to be.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="port_part_2">
+                    <div class="sub_1">
+                        <div class="sub_img">
+                            <img src="images/Jasmine.jpg"/>
+                        </div>
+                        <div class="sub_text">
+                            <h2>Jasmine Mausbach</h2>
+                            <h3>Intern</h3>
+                            <p>Jasmine Mausbach, originally from Omaha, Neb., is an undergraduate student working on bachelor’s degrees in environmental restoration and Spanish at the University of Nebraska-Lincoln. Jasmine is researching and assessing various student engagement programs to evaluate how they might be applied to programs at DWFI. She is also working on a project to promote the Institute’s Faculty Fellows on the website. In addition, she is developing a database of irrigation technology, irrigated land and irrigation productivity for every country in the world. The database will be used to create an interactive visual map with irrigation facts for each country.
+                                She hopes to make a difference in the lives of those without enough food due to poor water management and farming techniques by assisting with international and local development. Her career goals include traveling the world, identifying environmental issues and proposing and implementing sustainable solutions. She hopes her experience at DWFI will help her achieve those goals.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_port">
+                <div class="port_part_1">
+                    <div class="sub_1">
+                        <div class="sub_img">
+                            <img src="images/Anna.jpg"/>
+                        </div>
+                        <div class="sub_text">
+                            <h2>Anna Wistrom</h2>
+                            <h3>Designation</h3>
+                            <p>Anna Wistrom, hometown of Sidney, NE, is an undergraduate student at the University of Nebraska pursuing a bachelor’s degree in Environmental Restoration Science with a double minor in Energy and Water Sciences. Anna plans to pursue a master’s degree in the area of Environmental Science after the completion of her undergraduate studies. Currently at DWFI Anna is working to gather research on the different energy sources for irrigation systems across the U.S., primarily the top agricultural states. Anna hopes to pursue a career in the area of energy and water sciences one day, and she believes her time at the institute will help her to gain valuable knowledge in these areas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="port_part_2">
+                    <div class="sub_1">
+                        <div class="sub_img">
+                            <img src="images/Suzzanne.jpg"/>
+                        </div>
+                        <div class="sub_text">
+                            <h2>Suzzane Pozkill</h2>
+                            <h3>Intern</h3>
+                            <p>Suzanne Polzkill, local to Lincoln, Neb., is an undergraduate student working on a bachelor’s degree in Natural Resource and Environmental Economics at the University of Nebraska-Lincoln with a focus on Water Science, as well as pursuing certification in Public Policy Analysis. Suzanne is currently working with DWFI to establish a database of surface water and groundwater policies throughout the High Plains region through research and integration of existing public records. Suzanne’s personal research interests involve urban water and food security, particularly investigating the merits of urban agricultural methods and green infrastructure. She hopes to work with communities to establish sustainable localized food systems and believes her time with DWFI will give her greater insight into resource management.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_port">
+                <div class="port_part_1">
+                    <div class="sub_1">
+                        <div class="sub_img">
+                            <img src="images/James.jpg"/>
+                        </div>
+                        <div class="sub_text">
+                            <h2>James Garza</h2>
+                            <h3>Intern</h3>
+                            <p>James Garza, originally from Laredo, Texas, is a junior undergraduate student working on a bachelor’s degree in Global Studies with minors in Arabic, History, and National Security Studies at the University of Nebraska-Lincoln. James’s regional specialization is the Middle East and North Africa, with an emphasis on security issues in the region. James is president of the Great Plains National Security Education Consortium, a student organization affiliated with UNL’s national security program. In addition to management and leadership of the 60+-member organization, he is also working on research regarding deterrence of cyber attacks on United States space assets in addition to developing an intelligence simulation to compete for a contract with the Defense Intelligence Agency. James has spent time studying Arabic in Amman, Jordan in addition to traveling with a University of Nebraska delegation in Oman
+                                James hopes to help guide policy on the Middle East for US decision makers and work in diplomacy to build relationships with other countries in the Middle East. He hopes that his experience at DWFI will give him insight on critical environmental issues that are drivers in issues in the Middle East and North Africa today.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="port_part_2">
+                    <div class="sub_1">
+                        <div class="sub_img">
+                            <img src="images/Madison.jpg"/>
+                        </div>
+                        <div class="sub_text">
+                            <h2>Madison Thorn</h2>
+                            <h3>Intern</h3>
+                            <p>Maddie Thorn is an undergraduate student pursuing a Global Studies major and communication studies and Spanish minors at the University of Nebraska-Lincoln. She is originally from Phoenix, Ari., and has a passion for cultural immersion. She has spent time studying abroad in both Ecuador and Spain. This spring she will be collecting research and statistics on the Syrian refugee crisis, specifically in regard to water scarcity and human security. She and the other interns will collaborate the design and ideas in preparation for the conference over the topic on 19-20 April. Maddie is excited to enhance her knowledge on affairs in the Middle East and learn more about the effect water resources have on communities’ worldwide. She plans to graduate in May 2016 and hopes to continue her thirst for cultural immersion by teaching English on a Fulbright Scholarship in Mexico.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_port">
+                <div class="port_part_1">
+                    <div class="sub_1">
+                        <div class="sub_img">
+                            <img src="images/Alex.jpg"/>
+                        </div>
+                        <div class="sub_text">
+                            <h2>Alexander Stejskal</h2>
+                            <h3>Intern</h3>
+                            <p>Alexander Stejskal, originally from Cedar Creek, Neb., is an undergraduate student working on a bachelor’s degree in Natural Resource and Environmental Economics at the University of Nebraska-Lincoln. Alexander is preparing a database of surface water and groundwater policies and regulations throughout the High Plains Region, including Nebraska, Kansas, Texas, Oklahoma, and Colorado and presenting this data in a direct and easily interpretable format. He hopes to improve water management practices within the High Plains Region and around the world, and also bringing awareness to the irreplaceable role that water plays and how to make it last for generations to come. His career goals include changing the misconception of water as an infinite resource and working with irrigators to develop a plan to minimize water use without sacrificing crop yields. He hopes that his experience at DWFI will help him along the way to improving water management around the world.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="port_part_2">
+                    <div class="sub_1">
+                        <div class="sub_img">
+                            <img src="images/sahilk.jpg"  width="210">
+                        </div>
+                        <div class="sub_text">
+                            <h2>Sahil Katia</h2>
+                            <h3>Intern</h3>
+                            <p> Sahil Katia, orginally from India,is an graduate student purisng a Master's degree in Management Information System. He is repsonsible for the development of this website. He love to draw since he was a child and this hobby has leaded him into the design field. He spend most of his free time in researching new software and web design technologies.  </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="team">
+            <h1> MEET OUR PARTNERS</h1>
+        </div>
+        <div class="imagepartners">
+            <img src="images/part.jpg" alt="Trolltunga Norway" width="300" height="200">
+            <div class="desc">The International Arid Lands Consortium</div>
+        </div>
+        <div class="imagepartners">
+            <img src="images/pr.jpg" alt="Northern Lights" width="600" height="400">
+            </a>
+            <div class="desc">The Bill and Melinda Gates Foundation</div>
+        </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class="clear"></div>
     <div id="wrapper">
         <!--////////////////////////////////////Social Media-->
         <div id="social">
